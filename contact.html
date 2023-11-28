@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contate Me - Izzi Studio</title>
+    <link rel="icon" href="img/fav.png" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="ionicons/css/ionicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- main css -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- modernizr -->
+    <script src="js/modernizr.js"></script>
+
+    <script>
+        function enviarMensagemWhatsApp(event) {
+            event.preventDefault();
+
+            // Obter os dados do formulário
+            var name = document.getElementsByName("name")[0].value;
+            var email = document.getElementsByName("email")[0].value;
+            var object = document.getElementsByName("object")[0].value;
+            var message = document.getElementsByName("message")[0].value;
+
+            // Formatar a mensagem para o WhatsApp
+            var whatsappMessage = `Nome: ${name}%0AEmail: ${email}%0AObjetivo: ${object}%0AMensagem: ${message}`;
+
+            // Substituir o número abaixo pelo seu número no formato internacional
+            var phoneNumber = "5569999031447";
+
+            // Construir o link para enviar a mensagem via WhatsApp
+            var whatsappLink = `https://wa.me/${phoneNumber}?text=${whatsappMessage}`;
+
+            // Redirecionar para o link do WhatsApp
+            window.open(whatsappLink, "_blank");
+        }
+    </script>
+</head>
+
+<body>
+
+    <!-- Preloader -->
+    <div id="preloader">
+        <div class="pre-container">
+            <div class="spinner">
+                <div class="double-bounce1"></div>
+                <div class="double-bounce2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- end Preloader -->
+
+    <div class="container-fluid">
+        <!-- box-header -->
+        <header class="box-header">
+            <div class="box-logo">
+                <a href="index.html"><img id="logo" src="img/logo.png" width="80" alt="Logo"></a>
+            </div>
+            <!-- box-nav -->
+            <a class="box-primary-nav-trigger" href="#0">
+                <span class="box-menu-text">Menu</span><span class="box-menu-icon"></span>
+            </a>
+            <!-- box-primary-nav-trigger -->
+        </header>
+        <!-- end box-header -->
+
+        <!-- nav -->
+        <nav>
+            <ul class="box-primary-nav">
+
+                <li><a href="index.html">Intro</a></li>
+                <li><a href="about.html">Sobre Mim</a></li>
+                <li><a href="services.html">Serviços</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contate Me</a> <i class="ion-ios-circle-filled color"></i></li>
+
+                <li class="box-social"><a href="https://www.instagram.com/udavizzi/"><i class="fa fa-instagram" style="font: size 28px;"></i></a></li>
+                <li class="box-social"><a href="https://twitter.com/udavizzi"><i class="fa fa-twitter" style="font: size 28px;"></i></a></li>
+                <li class="box-social"><a href="https://wa.link/bb2v8s"><i class="fa fa-whatsapp" style="font: size 28px;"></i></a></li>
+
+            </ul>
+        </nav>
+        <!-- end nav -->
+
+    </div>
+
+    <!-- top bar -->
+    <div class="top-bar">
+        <h1>Contate Me</h1>
+        <p><a href="index.html">Home</a> / Contate Me</p>
+    </div>
+    <!-- end top bar -->
+
+    <!-- main-container -->
+    <div class="container main-container">
+        <div class="col-md-6">
+            <form action="processa_formulario.php" method="post" onsubmit="enviarMensagemWhatsApp(event)">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="input-contact">
+                            <input type="text" name="name" required>
+                            <span>Seu nome</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="input-contact">
+                            <input type="text" name="email" required>
+                            <span>Seu email</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="input-contact">
+                            <input type="text" name="object" required>
+                            <span>Objetivo</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <div class="textarea-contact">
+                            <textarea name="message" ></textarea>
+                            <span>Mensagem</span>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <button type="submit" class="btn btn-box">Enviar</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-md-6">
+            <h3 class="text-uppercase">Contate Me</h3>
+            <h5>Quality & Creativity</h5>
+            <div class="h-20"></div>
+            <p>Estou ansioso para discutir suas ideias e necessidades específicas. Seja qual for o seu projeto criativo, estamos aqui para torná-lo realidade e destacar-se com um design que cativará o público.</p>
+            <p>Entre em contato para agendarmos uma conversa inicial e explorarmos como posso contribuir para o sucesso do seu projeto.</p>
+            <p>Agradeço pela oportunidade e aguardo o nosso contato!</p>
+            <div class="contact-info">
+                <p><i class="ion-android-call"></i> 69 99903-1447</p>
+                <p><i class="ion-ios-email"></i> z.idavizzi@gmail.com</p>
+            </div>
+        </div>
+    </div>
+    <!-- end main-container -->
+
+    <!-- footer -->
+    <footer>
+        <div class="container-fluid">
+            <p class="copyright">© Izzi Studio 2023</p>
+        </div>
+    </footer>
+    <!-- end footer -->
+
+    <!-- back to top -->
+    <a href="#0" class="cd-top"><i class="ion-android-arrow-up"></i></a>
+    <!-- end back to top -->
+
+    <!-- jQuery -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <!-- plugins -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/animated-headline.js"></script>
+    <script src="js/isotope.pkgd.min.js"></script>
+    <script src="js/ocult-icon.js"></script>
+
+    <!-- custom script -->
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>
